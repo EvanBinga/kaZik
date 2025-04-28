@@ -90,3 +90,24 @@
     border-radius: 3px;
   }
 }
+
+
+.game-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  border-radius: 4px;
+  z-index: 10;
+  
+  &.popular-badge {
+    background-color: #ff5722;
+  }
+  
+  &.new-badge {
+    background-color: #4caf50;
+  }
+}
