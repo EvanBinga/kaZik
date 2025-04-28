@@ -1,0 +1,29 @@
+// src/components/GameGrid/GameGrid.scss
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+  
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  color: $secondary-text;
+  font-size: 18px;
+}

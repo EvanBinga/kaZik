@@ -1,0 +1,79 @@
+
+// Flexbox
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  
+  // Media queries
+  @mixin mobile {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media (max-width: $tablet) {
+      @content;
+    }
+  }
+  
+  // Container
+  @mixin container {
+    width: 100%;
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  // Box shadow
+  @mixin box-shadow($level: 1) {
+    @if $level == 1 {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    } @else if $level == 2 {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    } @else if $level == 3 {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    } @else if $level == 4 {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    } @else if $level == 5 {
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    }
+  }
+  
+  // Button styles
+  @mixin button($bg-color: $purple, $text-color: white) {
+    background-color: $bg-color;
+    color: $text-color;
+    border: none;
+    border-radius: $border-radius;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color $transition-speed;
+    
+    &:hover {
+      background-color: lighten($bg-color, 10%);
+    }
+    
+    &:active {
+      background-color: darken($bg-color, 5%);
+    }
+  }
+  
+  // Truncate text with ellipsis
+  @mixin truncate($width: 100%) {
+    width: $width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  // Card style
+  @mixin card {
+    background-color: $card-bg;
+    border-radius: $border-radius;
+    @include box-shadow(1);
+  }

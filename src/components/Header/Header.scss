@@ -1,0 +1,111 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.header {
+  background-color: $darker-bg;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    @include mobile {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    
+    .logo-text-dark {
+      color: white;
+    }
+    
+    .logo-text-purple {
+      color: $purple;
+    }
+  }
+  
+  .search-container {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 40%;
+    
+    @include mobile {
+      width: 100%;
+    }
+    
+    .search-input {
+      background-color: transparent;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      width: 100%;
+      font-size: 14px;
+      outline: none;
+      
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.3);
+      }
+    }
+    
+    .search-button {
+      background-color: transparent;
+      border: none;
+      color: white;
+      padding: 0 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+    
+    .user-balance {
+      background-color: rgba($purple, 0.2);
+      color: $purple;
+      padding: 8px 15px;
+      border-radius: 20px;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    
+    .btn-login {
+      background-color: transparent;
+      border: 1px solid $purple;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      
+      &:hover {
+        background-color: rgba($purple, 0.1);
+      }
+    }
+    
+    .btn-register {
+      background-color: $green;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+      
+      &:hover {
+        background-color: adjust-color($green, $lightness: 5%);
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+// src/components/GameCard/GameCard.scss
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.game-card {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: $card-bg;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    
+    .game-overlay {
+      opacity: 1;
+    }
+  }
+  
+  .game-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .play-button {
+    width: 50px;
+    height: 50px;
+    background-color: $purple;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    
+    &:hover {
+      background-color: adjust-color($purple, $lightness: 10%);
+    }
+  }
+  
+  .game-info {
+    padding: 12px;
+  }
+  
+  .game-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: $text-color;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .game-provider {
+    font-size: 12px;
+    color: $secondary-text;
+    margin-bottom: 8px;
+  }
+  
+  .game-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  
+  .game-feature {
+    font-size: 10px;
+    background-color: rgba($purple, 0.2);
+    color: $purple;
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+}
